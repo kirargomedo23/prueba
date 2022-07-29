@@ -10,4 +10,11 @@ jobs:
       
       - name: Hello kir!!
         run: echo "Hello !!! from ${{github.workflow}} - event ${{github.event_name}} "
+        
+      - name: f
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: |
+          echo "Job Context $JOB_CONTEXT "
+          echo "DONE"
 
